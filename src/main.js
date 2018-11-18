@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import HelloWorld from './components/HelloWorld'
 import Home from './components/Home'
+import Test from './components/Test'
 import VueRouter from 'vue-router'
 // import Users from './components/Users'
 
@@ -15,8 +16,10 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   routes: [
     {path: "/", component: Home},
+    {path: "/test", component: Test},
     {path: "/helloworld", component: HelloWorld}
-  ]
+  ],
+  mode: "history"
 })
 
 // 全局组件
@@ -24,6 +27,7 @@ const router = new VueRouter({
 
 /* eslint-disable no-new */
 new Vue({
+  router,
   el: '#app',
   components: { App },
   template: '<App/>'

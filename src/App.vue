@@ -1,42 +1,27 @@
 <template>
   <div id="app">
-    <app-header v-on:tiChanged="upTitle($event)" v-bind:title="title"></app-header>
-    <users v-bind:users="users"></users>
-    <users v-bind:users="users"></users>
-    <app-footer></app-footer>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/test">test</a></li>
+      <li><a href="/helloworld">HelloWorld</a></li>
+
+      <!-- 路由链接，整个页面不刷新 -->
+      <li><router-link to="/">Home</router-link></li>
+      <li><router-link to="/test">test</router-link></li>
+      <li><router-link to="/helloworld">HelloWorld</router-link></li>
+
+    </ul>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-// 局部注册组件
-import Users from './components/Users'
-import Header from './components/Header'
-import Footer from './components/Footer'
 
 export default {
   name: 'App',
   data() {
     return {
-      users:[
-        {name: "zhangsan", position: "web", show: false},
-        {name: "zhangsan", position: "web", show: false},
-        {name: "zhangsan", position: "web", show: false},
-        {name: "zhangsan", position: "web", show: false},
-        {name: "zhangsan", position: "web", show: false},
-        {name: "zhangsan", position: "web", show: false},
-        {name: "zhangsan", position: "web", show: false}
-      ],
-      title: "example app"
-    }
-  },
-  components: {
-    "users": Users,
-    "app-header": Header,
-    "app-footer": Footer
-  },
-  methods: {
-    upTitle: function (title) {
-      this.title = title;
+
     }
   }
 }
