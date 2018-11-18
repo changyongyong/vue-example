@@ -17,9 +17,11 @@ Vue.use(VueResource)
 // 配置路由
 const router = new VueRouter({
   routes: [
-    {path: "/", component: Home},
-    {path: "/test", component: Test},
-    {path: "/helloworld", component: HelloWorld}
+    {path: '/', component: Home},
+    {path: '/test', component: Test},
+    {path: '/helloworld', component: HelloWorld},
+    // 404跳转
+    {path: '*', redirect: '/'}
   ],
   mode: "history"
 })
