@@ -18,13 +18,13 @@
     data() {
       return {
         users:[
-          {name: "zhangsan", position: "web", show: false},
-          {name: "zhangsan", position: "web", show: false},
-          {name: "zhangsan", position: "web", show: false},
-          {name: "zhangsan", position: "web", show: false},
-          {name: "zhangsan", position: "web", show: false},
-          {name: "zhangsan", position: "web", show: false},
-          {name: "zhangsan", position: "web", show: false}
+          // {name: "zhangsan", position: "web", show: false},
+          // {name: "zhangsan", position: "web", show: false},
+          // {name: "zhangsan", position: "web", show: false},
+          // {name: "zhangsan", position: "web", show: false},
+          // {name: "zhangsan", position: "web", show: false},
+          // {name: "zhangsan", position: "web", show: false},
+          // {name: "zhangsan", position: "web", show: false}
         ],
         title: "example app"
       }
@@ -38,6 +38,13 @@
       upTitle: function (title) {
         this.title = title;
       }
+    },
+    created() {
+      this.$http.get("http://jsonplaceholder.typicode.com/users")
+        .then((data) => {
+          console.log(data);
+          this.users = data.body;
+        });
     }
   }
 </script>

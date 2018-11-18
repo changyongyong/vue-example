@@ -6,11 +6,13 @@ import HelloWorld from './components/HelloWorld'
 import Home from './components/Home'
 import Test from './components/Test'
 import VueRouter from 'vue-router'
+import VueResource from 'vue-resource'
 // import Users from './components/Users'
 
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
+Vue.use(VueResource)
 
 // 配置路由
 const router = new VueRouter({
